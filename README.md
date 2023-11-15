@@ -7,6 +7,7 @@
   - Helpers
   - Http
     - Controllers
+    - Middleware
     - Root
   - Imports
   - Models
