@@ -15,10 +15,10 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $now = \Carbon\Carbon::now();
-        $admin = Hash::make('admin');
-        $social = Hash::make('social');
-        $medecin = Hash::make('medecin');
 
+        $admin = Hash::make("admin");
+        $social = Hash::make("social");
+        $medecin = Hash::make("medecin");
 
         $user = User::insert([
             [
@@ -31,14 +31,14 @@ class UserSeeder extends Seeder
             [
                 'name' => 'service social',
                 'email' => 'social@gmail.com',
-                'password'=> $social,
+                'password'=>$social,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
                 'name' => 'Medecin générale',
                 'email' => 'medecin@gmail.com',
-                'password'=> $medecin,
+                'password'=>$medecin,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
