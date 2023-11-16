@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a63f89e8f63dd11ef08a21446e4d817",
+    "content-hash": "b08f874249a7a03d706c6a866003e7e2",
     "packages": [
         {
             "name": "brick/math",
@@ -1455,6 +1455,70 @@
                 }
             ],
             "time": "2023-08-27T10:19:19+00:00"
+        },
+        {
+            "name": "infyomlabs/adminlte-templates",
+            "version": "v6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
+                "reference": "f722220b414fed23f8d0c9cb9e2cdf03c3c685bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/f722220b414fed23f8d0c9cb9e2cdf03c3c685bb",
+                "reference": "f722220b414fed23f8d0c9cb9e2cdf03c3c685bb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^10.0",
+                "illuminate/view": "^10.0",
+                "infyomlabs/laravel-ui-adminlte": "^5.2",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "InfyOm\\AdminLTETemplates\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mitul Golakiya",
+                    "email": "me@mitul.me"
+                }
+            ],
+            "description": "AdminLTE templates for InfyOm Laravel Generator",
+            "keywords": [
+                "AdminLTE",
+                "bootstrap",
+                "generator",
+                "infyom",
+                "laravel",
+                "templates"
+            ],
+            "support": {
+                "issues": "https://github.com/InfyOmLabs/adminlte-templates/issues",
+                "source": "https://github.com/InfyOmLabs/adminlte-templates/tree/v6.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/infyomlabs",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2023-04-04T10:56:17+00:00"
         },
         {
             "name": "infyomlabs/laravel-generator-helpers",

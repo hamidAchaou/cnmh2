@@ -58,6 +58,8 @@ class DossierPatientController extends AppBaseController
      */
     public function create()
     {
+        $this->authorizeCnmh('create','DossierPatient');
+
         return view('dossier_patients.create');
     }
 
@@ -149,6 +151,8 @@ class DossierPatientController extends AppBaseController
      */
     public function edit($id)
     {
+        $this->authorizeCnmh('edit','DossierPatient');
+
         $dossierPatient = $this->dossierPatientRepository->find($id);
 
         if (empty($dossierPatient)) {

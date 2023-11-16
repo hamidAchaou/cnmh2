@@ -9,6 +9,7 @@
         "doctrine/dbal": "^3.6",
         "guzzlehttp/guzzle": "^7.2",
         "infyomlabs/laravel-ui-adminlte": "^5.2",
+        "infyomlabs/adminlte-templates": "^6.0",
         "laracasts/flash": "^3.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
