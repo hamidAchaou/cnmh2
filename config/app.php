@@ -195,6 +195,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class, 
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -211,6 +213,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Flash' => Laracasts\Flash\Flash::class, 
+        'Form' => Collective\Html\FormFacade::class, 
+        'Html' => Collective\Html\HtmlFacade::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
