@@ -29,12 +29,12 @@
                                 class='btn btn-default btn-sm'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            {{-- <a href="{{ route('dossier-patients.edit', [$dossierPatient->id]) }}"
+                            <a href="{{ route('dossier-patients.edit', [$dossierPatient->id]) }}"
                                 class='btn btn-default btn-sm'>
                                 <i class="far fa-edit"></i>
                             </a>
                             {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn
-                            btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
+                            btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} 
                         </div>
                         {!! Form::close() !!}
                     </td>
