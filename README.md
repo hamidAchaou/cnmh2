@@ -16,7 +16,7 @@
   - Providers
     - AppServiceProvider.php
     - AuthServiceProvider.php
-    - AuthServiceProvider.php
+    - RouteServiceProvider.php
   - Repositories
 
 - config
@@ -32,6 +32,9 @@
     
 - resources
   - views
+    - auth
+      - Login.blade.php
+    - **tous les vues**
   
 - Routes
   - web.php
