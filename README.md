@@ -1,6 +1,11 @@
-# cnmh2
+<!-- TODO : Changer le nom du projet -->
+# cnmh2 
+
+<!-- TODO : Introduction -->
 
 ## Les composants de l'application
+
+<!-- Introduction -->
 
 - app
   - Exports
@@ -18,27 +23,23 @@
     - AuthServiceProvider.php
     - RouteServiceProvider.php
   - Repositories
-
 - config
   - app.php
   - excel.php+
-
 - database
   - factories
   - migrations
   - seeders
-
-- lang
-    
+- lang 
 - resources
   - views
     - auth
       - Login.blade.php
     - **tous les vues**
-  
 - Routes
   - web.php
 
+<!-- TODO : Vérifiez que maatwebsite/excel est installé dans lab-laraver-starter -->
 - composer.json
   -  "require": {
         "maatwebsite/excel": "^3.1"
@@ -54,6 +55,11 @@
 ```bash
   npm install
   composer install
+```
+
+<!-- TODO : Ajoutez des instruction d'installation de fichier d'environnement -->
+
+```bash
   php artisan migrate:fresh
   php artisan db:seed
   npm run dev
