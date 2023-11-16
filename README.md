@@ -41,7 +41,8 @@
 
 - composer.json
   -  "require": {
-        "maatwebsite/excel": "^3.1"
+        "maatwebsite/excel": "^3.1",
+        "infyomlabs/adminlte-templates": "^6.0",
     },
   -  "autoload": {
         "files": [
