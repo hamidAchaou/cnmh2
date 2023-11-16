@@ -1,6 +1,6 @@
 # cnmh2
 
-## Les composants 
+## Les composants de l'application
 
 - app
   - Exports
@@ -8,6 +8,7 @@
   - Http
     - Controllers
     - Middleware
+      - ConsultationMidddleware.PHP
     - Request
   - Imports
   - Models
@@ -45,20 +46,14 @@
         ]
     }
 
-### Install les packages 
+### Installation de l'application
 
-- composer require laracasts/flash
-- composer require laravelcollective/html
+```bash
+  npm install
+  composer install
+  php artisan migrate:fresh
+  php artisan db:seed
+  npm run dev
+```
 
 
-- 'providers' => [
-    Laracasts\Flash\FlashServiceProvider::class,
-    Collective\Html\HtmlServiceProvider::class,
-
-],
-
-- 'aliases' => [
-    'Flash' => Laracasts\Flash\Flash::class,
-    'Form' => Collective\Html\FormFacade::class,
-    'Html' => Collective\Html\HtmlFacade::class,
-],

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class ModelExists
+class ConsultationMidddleware
 {
     /**
      * Handle an incoming request.
