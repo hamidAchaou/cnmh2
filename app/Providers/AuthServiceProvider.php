@@ -26,6 +26,15 @@ class AuthServiceProvider extends ServiceProvider
         'App\Models\NiveauScolaire' => 'App\Policies\NiveauScolairePolicy',
         'App\Models\EtatCivil' => 'App\Policies\EtatCivilPolicy',
         'App\Models\DossierPatient' => 'App\Policies\DossierPatientPolicy',
+        'App\Models\Tuteur' => 'App\Policies\TuteurPolicy',
+        'App\Models\Patient' => 'App\Policies\PatientPolicy',
+        'App\Models\Consultation' => 'App\Policies\ConsultationPolicy',
+        'App\Models\RendezVous' => 'App\Policies\RendezVousPolicy',
+
+        
+
+        
+
 
 
     ];

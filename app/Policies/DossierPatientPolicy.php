@@ -6,6 +6,10 @@ use App\Models\DossierPatient;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
+/**
+ * @author Boukhar Soufiane
+ */
+
 class DossierPatientPolicy
 {
     /**
@@ -21,7 +25,7 @@ class DossierPatientPolicy
      */
     public function view(User $user, DossierPatient $dossierPatient): bool
     {
-        //
+        return $user->name === 'service social';
     }
 
     /**
@@ -39,11 +43,19 @@ class DossierPatientPolicy
     {
         return $user->name === 'service social';
     }
+
+       /**
+     * Determine whether the user can edit the model.
+     */
+    public function edit(User $user, RendezVous $rendezVous): bool
+    {
+        return $user->name === 'service social';
+    }
    
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, DossierPatient $dossierPatient): bool
+    public function destroy(User $user, DossierPatient $dossierPatient): bool
     {
         return $user->name === 'service social';
     }

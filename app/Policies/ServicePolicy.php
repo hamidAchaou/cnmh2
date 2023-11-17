@@ -6,6 +6,11 @@ use App\Models\Service;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
+
+/**
+ * @author Boukhar Soufiane
+ */
+
 class ServicePolicy
 {
     /**
@@ -21,7 +26,7 @@ class ServicePolicy
      */
     public function view(User $user, Service $service): bool
     {
-        //
+        return $user->name === 'admin';
     }
 
     /**
@@ -51,7 +56,7 @@ class ServicePolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Service $service): bool
+    public function destroy(User $user, Service $service): bool
     {
         return $user->name === 'admin';
     }

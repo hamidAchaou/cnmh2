@@ -2,15 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\TypeHandicap;
+use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-/**
- * @author Boukhar Soufiane
- */
-
-class TypeHandicapPolicy
+class PatientPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -23,9 +19,9 @@ class TypeHandicapPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, TypeHandicap $typeHandicap): bool
+    public function view(User $user, Patient $patient): bool
     {
-        return true;
+        return $user->name === 'service social';
     }
 
     /**
@@ -33,37 +29,37 @@ class TypeHandicapPolicy
      */
     public function create(User $user): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, TypeHandicap $typeHandicap): bool
+    public function update(User $user, Patient $patient): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
-    /**
+       /**
      * Determine whether the user can edit the model.
      */
-    public function edit(User $user, TypeHandicap $typeHandicap): bool
+    public function edit(User $user, RendezVous $rendezVous): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function destroy(User $user, TypeHandicap $typeHandicap): bool
+    public function destroy(User $user, Patient $patient): bool
     {
-       return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, TypeHandicap $typeHandicap): bool
+    public function restore(User $user, Patient $patient): bool
     {
         //
     }
@@ -71,7 +67,7 @@ class TypeHandicapPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, TypeHandicap $typeHandicap): bool
+    public function forceDelete(User $user, Patient $patient): bool
     {
         //
     }

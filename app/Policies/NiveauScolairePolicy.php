@@ -6,6 +6,11 @@ use App\Models\NiveauScolaire;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
+
+/**
+ * @author Boukhar Soufiane
+ */
+
 class NiveauScolairePolicy
 {
     /**
@@ -21,7 +26,7 @@ class NiveauScolairePolicy
      */
     public function view(User $user, NiveauScolaire $niveauScolaire): bool
     {
-        //
+        return $user->name === 'admin';
     }
 
     /**

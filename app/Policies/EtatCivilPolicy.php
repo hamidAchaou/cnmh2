@@ -6,6 +6,11 @@ use App\Models\EtatCivil;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
+
+/**
+ * @author Boukhar Soufiane
+ */
+
 class EtatCivilPolicy
 {
     /**
@@ -21,7 +26,7 @@ class EtatCivilPolicy
      */
     public function view(User $user, EtatCivil $etatCivil): bool
     {
-        //
+        return $user->name === 'admin';
     }
 
     /**

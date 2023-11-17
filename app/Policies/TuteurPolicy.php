@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\CouvertureMedical;
+use App\Models\Tuteur;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
@@ -10,7 +10,7 @@ use Illuminate\Auth\Access\Response;
  * @author Boukhar Soufiane
  */
 
-class CouvertureMedicalPolicy
+class TuteurPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -23,9 +23,9 @@ class CouvertureMedicalPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, CouvertureMedical $couvertureMedical): bool
+    public function view(User $user, Tuteur $tuteur): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
     /**
@@ -33,37 +33,37 @@ class CouvertureMedicalPolicy
      */
     public function create(User $user): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, CouvertureMedical $couvertureMedical): bool
+    public function update(User $user, Tuteur $tuteur): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
-     /**
-     * Determine whether the user can update the model.
+       /**
+     * Determine whether the user can edit the model.
      */
-    public function edit(User $user, CouvertureMedical $couvertureMedical): bool
+    public function edit(User $user, RendezVous $rendezVous): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, CouvertureMedical $couvertureMedical): bool
+    public function destroy(User $user, Tuteur $tuteur): bool
     {
-        return $user->name === 'admin';
+        return $user->name === 'service social';
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, CouvertureMedical $couvertureMedical): bool
+    public function restore(User $user, Tuteur $tuteur): bool
     {
         //
     }
@@ -71,7 +71,7 @@ class CouvertureMedicalPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, CouvertureMedical $couvertureMedical): bool
+    public function forceDelete(User $user, Tuteur $tuteur): bool
     {
         //
     }

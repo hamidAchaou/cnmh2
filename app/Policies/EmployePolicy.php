@@ -6,6 +6,11 @@ use App\Models\Employe;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
+/**
+ * @author Boukhar Soufiane
+ */
+
+
 class EmployePolicy
 {
     /**
