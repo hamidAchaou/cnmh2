@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             AppMenuSeeder::class,
+            RoleSeeder::class,
             UserSeeder::class,
             EtatCivilsTableSeeder::class,
             ServicesTableSeeder::class,
