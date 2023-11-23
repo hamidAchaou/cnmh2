@@ -12,6 +12,7 @@ use App\Http\Controllers\DossierPatientController;
 use App\Http\Controllers\NiveauScolaireController;
 use App\Http\Controllers\CouvertureMedicalController;
 use App\Http\Controllers\RendezVousController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,3 +118,7 @@ Route::get('/entretien/{query}',[DossierPatientController::class,'entretien'])->
 Route::post('/storeEntetien',[DossierPatientController::class,'storeEntetien'])->name('dossier-patients.storeEntetien');
 Route::get('/export',[DossierPatientController::class,'export'] )->name('dossier-patients.export');
 });
+
+
+// Route Roles
+Route::resource('roles', App\Http\Controllers\RoleController::class);
