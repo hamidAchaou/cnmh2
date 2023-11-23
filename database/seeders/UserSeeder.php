@@ -15,10 +15,10 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $now = \Carbon\Carbon::now();
+
         $admin = Hash::make("admin");
         $social = Hash::make("social");
         $medecin = Hash::make("medecin");
-
 
         $user = User::insert([
             [
