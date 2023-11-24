@@ -3,16 +3,14 @@
         <table class="table table-striped" id="roles-table">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Guard Name</th>
-                <th colspan="3">Action</th>
+                <th>Nom</th>
+                <th colspan="3">Actions</th>
             </tr>
             </thead>
             <tbody>
             @foreach($roles as $role)
                 <tr>
                     <td>{{ $role->name }}</td>
-                    <td>{{ $role->guard_name }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['roles.destroy', $role->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
@@ -39,9 +37,9 @@
             @include('adminlte-templates::common.paginate', ['records' => $roles])
         </div>
         <div class="float-left">
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
-                                    <i class="fas fa-download"></i> Exporter
-                                </button>
+            <a href="{{ route('roles.export') }}" class="btn btn-default swalDefaultQuestion">
+                <i class="fas fa-download"></i> Exporter
+            </a>
                                 <button type="button" class="btn btn-default swalDefaultQuestion">
                                     <i class="fas fa-file-import"></i> Importer
                                 </button>

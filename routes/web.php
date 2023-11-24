@@ -119,10 +119,16 @@ Route::post('/storeEntetien',[DossierPatientController::class,'storeEntetien'])-
 Route::get('/export',[DossierPatientController::class,'export'] )->name('dossier-patients.export');
 });
 
+/**
+ * Roles links
+ */
 
-// Route Roles
-Route::resource('roles', App\Http\Controllers\RoleController::class);
-// Route Permission
+Route::resource('roles', App\Http\Controllers\RoleController::class); // ressource
+Route::get('roles_export', [App\Http\Controllers\RoleController::class, 'export'])->name('roles.export'); // Export
+
+/**
+ * Permission links
+ */
 Route::resource('permissions', App\Http\Controllers\PermissionController::class);
-// Export Permission
-Route::get('permissions_export', [App\Http\Controllers\PermissionController::class, 'export'])->name('permissions.export');
+Route::get('permissions_export', [App\Http\Controllers\PermissionController::class, 'export'])->name('permissions.export'); // Export
+Route::post('/import_permissions', [App\Http\Controllers\PermissionController::class, 'import'])->name('permissions.import'); // Import

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportRole;
 use App\Http\Requests\CreateRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\RoleRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RoleController extends AppBaseController
 {
@@ -131,5 +133,16 @@ class RoleController extends AppBaseController
         Flash::success(__('messages.deleted', ['model' => __('models/roles.singular')]));
 
         return redirect(route('roles.index'));
+    }
+
+    /**
+     * Export the Role data to an Excel file.
+     *
+     * @return BinaryFileResponse
+    */
+
+    public function export()
+    {
+        return Excel::download(new ExportRole, 'role.xlsx');
     }
 }
