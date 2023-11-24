@@ -3,16 +3,14 @@
         <table class="table table-striped" id="roles-table">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Guard Name</th>
-                <th colspan="3">Action</th>
+                <th>Nom</th>
+                <th colspan="3">Actions</th>
             </tr>
             </thead>
             <tbody>
             @foreach($roles as $role)
                 <tr>
                     <td>{{ $role->name }}</td>
-                    <td>{{ $role->guard_name }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['roles.destroy', $role->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

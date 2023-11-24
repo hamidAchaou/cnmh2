@@ -11,6 +11,8 @@ use Flash;
 use Maatwebsite\Excel\Facades\Excel;
 
 use App\Exports\ExportPermission;
+use App\Import\importPermissions;
+use App\Imports\ImportPermissions as ImportsImportPermissions;
 
 class PermissionController extends AppBaseController
 {
@@ -146,4 +148,10 @@ class PermissionController extends AppBaseController
     {
         return Excel::download(new ExportPermission, 'permissions.xlsx');
     }
+
+    // public function import(Request $request)
+    // {
+    //     Excel::import(new ImportPermissions, $request->file('file')->store('files'));
+    //     return redirect()->back();
+    // }
 }

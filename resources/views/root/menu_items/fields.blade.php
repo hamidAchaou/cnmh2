@@ -36,11 +36,3 @@
 
 <!-- Menu Group Id Field -->
 {{-- @dd($menuGroups->pluck('nom', 'id')) --}}
-<div class="form-group col-sm-6">
-    {!! Form::label('menu_group_id', __('models/menuItems.fields.menu_group_id').':') !!}
-    {!! Form::select(
-        'menu_group_id',
-        $menuGroups->pluck('nom', 'id'), $menuItem->menu_group_id,
-        ['class' => 'form-control']
-        ) !!}
-</div>

@@ -26,10 +26,11 @@
                     @include('roles.fields')
                 </div>
             </div>
-
             <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('roles.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
+                <div class="d-flex justify-content-between">
+                    {!! Form::submit('Enregestrer', ['class' => 'btn btn-primary']) !!}
+                    <a href="{{ route('roles.index') }}" class="btn btn-secondary"> @lang('crud.cancel') </a>
+                </div>
             </div>
 
             {!! Form::close() !!}
