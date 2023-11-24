@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\role;
+use App\Models\Role;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
@@ -13,10 +13,16 @@ class ExportRole implements FromCollection,WithHeadings
     */
     public function collection()
     {
-        return couvertureMedical::select("id")->get();
+        return Role::select(
+            'name',
+            'guard_name'
+        )->get();
     }
     public function headings(): array
     {
-        return [ "Id"];
+        return [
+            'name',
+            'guard_name'
+    ];
     }
 }
