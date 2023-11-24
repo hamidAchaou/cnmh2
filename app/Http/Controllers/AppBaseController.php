@@ -30,13 +30,7 @@ class AppBaseController extends Controller
         if ($user && $user->hasRole('admin')) {
             $this->authorize($permissions);  
         }
-        if($action === 'index' || $action === 'parent' || $action === 'patient' || $action === 'entretien'){
-            $this->authorize($permissions);  
-        }elseif($action === 'store'){  
-            $this->authorize($permissions);  
-        }else{ 
-            $this->authorize($permissions); 
-        }
+      
         
         return parent::callAction($method, $parameters);
     }
