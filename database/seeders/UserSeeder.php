@@ -28,7 +28,14 @@ class UserSeeder extends Seeder
             'updated_at' => $now,
         ]);
         $admin->assignRole('admin');
-        $admin->givePermissionTo('index-EtatCivil');
+
+        $permissionAdmin = [
+            'index-EtatCivil',
+            'index-Permission',
+            'addPermissionsAutomatically-Permission'
+        ];
+
+        $admin->givePermissionTo($permissionAdmin);
         $user = User::insert([
            
             [

@@ -15,6 +15,21 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'index-EtatCivil',
         ]);
+
+        Permission::create([
+            'name' => 'index-Permission',
+        ]);
+
+        Permission::create([
+            'name' => 'addPermissionsAutomatically-Permission',
+        ]);
+
+
+        
+
+
+
+
         
     }
 }

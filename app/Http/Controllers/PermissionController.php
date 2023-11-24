@@ -9,6 +9,7 @@ use App\Repositories\PermissionRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Maatwebsite\Excel\Facades\Excel;
+use Spatie\Permission\Models\Permission;
 
 use App\Exports\ExportPermission;
 use App\Import\importPermissions;
@@ -148,6 +149,43 @@ class PermissionController extends AppBaseController
     {
         return Excel::download(new ExportPermission, 'permissions.xlsx');
     }
+
+
+    public function addPermissionsAutomatically()
+    {
+        $controllers = [
+            'CouvertureMedicalController',
+            'ConsultationController',
+            'DossierPatientController',
+            'EmployeController',
+            'EtatCivilController',
+            'FonctionController',
+            'NiveauScolaireController',
+            'OrientationExterneController',
+            'PatientController',
+            'ReclamationController',
+            'RendezVousController',
+            'RoleController',
+            'ServiceController',
+            'TuteurController',
+            'TypeHandicapController'
+        ];
+    
+        $actions = ['create', 'store', 'show', 'edit', 'update', 'destroy', 'index', 'import', 'export','addPermissionsAutomatically'];
+    
+        foreach ($controllers as $controller) {
+            $this->createPermissionsForController($controller, $actions);
+        }
+    }
+    
+    private function createPermissionsForController($controller, $actions)
+    {
+        foreach ($actions as $action) {
+            $permissionName = $action . '-' . $controller;
+            Permission::create(['name' => $permissionName]);
+        }
+    }
+    
 
     // public function import(Request $request)
     // {

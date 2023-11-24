@@ -41,6 +41,12 @@ class AppMenuSeeder extends Seeder
             'icon' => '<i class="fa-solid fa-gears"></i>',
         ]);
 
+        $permissionsGroup = MenuGroup::create([
+            'nom' => 'Gestions Permissions',
+            'description' => "admin",
+            'icon' => '<i class="fa-solid fa-gears"></i>',
+        ]);
+
         $menu = [
             [
                 'nom' => __('Dossier patients'),
@@ -132,6 +138,13 @@ class AppMenuSeeder extends Seeder
                 'url' => 'etatCivils.index',
                 'menu_group_id' => $parametresGroup->id,
             ],
+            [
+                'nom' => __('Permission'),
+                'description' => "admin",
+                'icon' => null,
+                'url' => 'permissions.index',
+                'menu_group_id' => $permissionsGroup->id,
+            ]
         ];
 
         foreach ($menu as $item) {

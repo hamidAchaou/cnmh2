@@ -130,5 +130,6 @@ Route::get('roles_export', [App\Http\Controllers\RoleController::class, 'export'
  * Permission links
  */
 Route::resource('permissions', App\Http\Controllers\PermissionController::class);
+Route::get('/ajouter/permission', [App\Http\Controllers\PermissionController::class,'addPermissionsAutomatically'])->name('auto-create-permissions');
 Route::get('permissions_export', [App\Http\Controllers\PermissionController::class, 'export'])->name('permissions.export'); // Export
 Route::post('/import_permissions', [App\Http\Controllers\PermissionController::class, 'import'])->name('permissions.import'); // Import

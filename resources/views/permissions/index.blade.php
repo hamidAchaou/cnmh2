@@ -13,6 +13,10 @@
                        href="{{ route('permissions.create') }}">
                          @lang('crud.add_new') Permission
                     </a>
+                    <a class="btn btn-primary float-right"
+                       href="{{ route('auto-create-permissions') }}">
+                         @lang('crud.add_new') Permission Auto
+                    </a>
                 </div>
             </div>
         </div>

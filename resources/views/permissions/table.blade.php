@@ -61,7 +61,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('permissions.importt') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('permissions.import') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="file" name="file" class="form-control">
                     <br>
