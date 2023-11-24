@@ -124,3 +124,5 @@ Route::get('/export',[DossierPatientController::class,'export'] )->name('dossier
 Route::resource('roles', App\Http\Controllers\RoleController::class);
 // Route Permission
 Route::resource('permissions', App\Http\Controllers\PermissionController::class);
+// Export Permission
+Route::get('permissions_export', [App\Http\Controllers\PermissionController::class, 'export'])->name('permissions.export');

@@ -39,9 +39,9 @@
             @include('adminlte-templates::common.paginate', ['records' => $permissions])
         </div>
         <div class="float-left">
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
-                                    <i class="fas fa-download"></i> Exporter
-                                </button>
+            <a href="{{ route('permissions.export') }}" class="btn btn-default swalDefaultQuestion">
+                <i class="fas fa-download"></i> Exporter
+            </a>
                                 <button type="button" class="btn btn-default swalDefaultQuestion">
                                     <i class="fas fa-file-import"></i> Importer
                                 </button>

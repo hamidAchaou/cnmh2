@@ -8,6 +8,9 @@ use App\Http\Controllers\AppBaseController;
 use App\Repositories\PermissionRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\ExportPermission;
 
 class PermissionController extends AppBaseController
 {
@@ -131,5 +134,16 @@ class PermissionController extends AppBaseController
         Flash::success(__('messages.deleted', ['model' => __('models/permissions.singular')]));
 
         return redirect(route('permissions.index'));
+    }
+
+    /**
+     * Export the Permission data to an Excel file.
+     *
+     * @return BinaryFileResponse
+    */
+
+    public function export()
+    {
+        return Excel::download(new ExportPermission, 'permissions.xlsx');
     }
 }

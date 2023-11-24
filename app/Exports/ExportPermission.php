@@ -13,10 +13,16 @@ class ExportPermission implements FromCollection,WithHeadings
     */
     public function collection()
     {
-        return couvertureMedical::select("id")->get();
+        return Permission::select(
+            'name',
+            'guard_name'
+        )->get();
     }
     public function headings(): array
     {
-        return [ "Id"];
+        return [
+            'name',
+            'guard_name'
+    ];
     }
 }
