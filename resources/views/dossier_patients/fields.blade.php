@@ -1,11 +1,16 @@
 
 <?php
 $url = parse_url($_SERVER['REQUEST_URI']);
-$explodePath = explode('=', $url['path']);
-$parentId = $explodePath[1];
-$explodeQuery = explode('=', $url['query']);
-$patientId = $explodeQuery[1];
+$explodePath = explode('/', $url['path']);
+$parentId = $explodePath[count($explodePath) - 2];  
+$patientId = null;
+if (isset($url['query'])) {
+    $explodeQuery = explode('=', $url['query']);
+    $patientId = $explodeQuery[1];
+}
 ?>
+
+
 <!-- Numero Dossier Field -->
 {!! Form::text('numero_dossier', null, ['class' => 'form-control','hidden']) !!}
 
@@ -15,10 +20,11 @@ $patientId = $explodeQuery[1];
     {{ Form::select(
         'type_handicap_id',
         ['' => __('models/dossierPatients.fields.selecter.select_type_handicap_id')] + $type_handicap->pluck('nom', 'id')->toArray(),
-        null,
+        $type_handicap_patient->id,
         ['class' => 'form-control', 'required']
     ) }}
 </div>
+
 <!-- Couverture Medical Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fonction', __('models/dossierPatients.fields.couverture_medical_id') . ':') !!}

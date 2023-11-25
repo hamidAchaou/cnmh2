@@ -172,7 +172,18 @@ class DossierPatientController extends AppBaseController
             return redirect(route('dossier-patients.index'));
         }
 
-        return view('dossier_patients.edit')->with('dossierPatient', $dossierPatient);
+        $type_handicap = TypeHandicap::all();
+        $couverture_medical = CouvertureMedical::all();
+        $dossierPatientID = $dossierPatient['id'];
+
+        $DossierPatient_typeHandycape = DossierPatient_typeHandycape::where('dossier_patient_id', $dossierPatientID)->first()->id;
+        $type_handicap_patient =TypeHandicap::find($DossierPatient_typeHandycape);
+
+        $patientId = $dossierPatient['patient_id'];
+
+
+
+        return view('dossier_patients.edit',compact('dossierPatient','type_handicap','couverture_medical','patientId','type_handicap_patient'));
     }
 
     /**
@@ -180,15 +191,23 @@ class DossierPatientController extends AppBaseController
      */
     public function update($id, UpdateDossierPatientRequest $request)
     {
+        $data = $request->all();
         $dossierPatient = $this->dossierPatientRepository->find($id);
-
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
+        
+        $DossierPatient_typeHandycape = DossierPatient_typeHandycape::where('dossier_patient_id', $dossierPatient['id'])->first();
 
-        $dossierPatient = $this->dossierPatientRepository->update($request->all(), $id);
+
+        $DossierPatient_typeHandycape->update(
+            ['type_handicap_id' => $data['type_handicap_id']]
+        );
+        
+        $dossierPatient = $this->dossierPatientRepository->update($data, $id);
+
 
         Flash::success(__('messages.updated', ['model' => __('models/dossierPatients.singular')]));
 
