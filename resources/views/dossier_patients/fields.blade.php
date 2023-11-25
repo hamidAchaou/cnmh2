@@ -7,10 +7,7 @@ $explodeQuery = explode('=', $url['query']);
 $patientId = $explodeQuery[1];
 ?>
 <!-- Numero Dossier Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('numero_dossier', __('models/dossierPatients.fields.numero_dossier').':') !!}
-    {!! Form::text('numero_dossier', null, ['class' => 'form-control', 'required']) !!}
-</div>
+{!! Form::text('numero_dossier', null, ['class' => 'form-control','hidden']) !!}
 
 <!-- Fonction Field -->
 <div class="form-group col-sm-6">

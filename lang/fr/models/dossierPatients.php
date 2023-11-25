@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'Dossier Patient',
-    'plural' => 'Dossiers Patients',
+    'singular' => 'Dossier bénéficiaire',
+    'plural' => 'Dossiers bénéficiaires',
     'fields' => [
         'id' => 'Id',
         'patient_id' => 'Patient',

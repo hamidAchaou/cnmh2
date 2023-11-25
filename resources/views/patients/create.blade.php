@@ -5,6 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
+                  @include('dossier_patients.stepper')
                 </div>
             </div>
         </div>
@@ -17,8 +18,7 @@
                     <div class="card card-primary card-create ">
                         <div class="card-header">
                             <h3 class="card-title"> @lang('crud.create')
-                                un patient
-
+                               @lang('models/patients.singular')
                             </h3>
                         </div>
 

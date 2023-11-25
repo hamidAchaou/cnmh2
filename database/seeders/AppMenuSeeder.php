@@ -49,7 +49,7 @@ class AppMenuSeeder extends Seeder
 
         $menu = [
             [
-                'nom' => __('Dossier patients'),
+                'nom' => __('Dossier bénéficiaire'),
                 'icon' => '<i class="fa-solid fa-hospital-user"></i>',
                 'url' => 'dossier-patients.index',
             ],

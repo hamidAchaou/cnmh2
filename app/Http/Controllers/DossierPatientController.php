@@ -22,6 +22,9 @@ use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
 use App\Models\DossierPatientConsultation;
 
+/**
+ * @author CodeCampers, Boukhar Soufiane
+ */
 class DossierPatientController extends AppBaseController
 {
     /** @var DossierPatientRepository $dossierPatientRepository*/
@@ -67,9 +70,20 @@ class DossierPatientController extends AppBaseController
     public function store(CreateDossierPatientRequest $request)
     {
         $input = $request->all();
+
+        $latestDossier = DossierPatient::where('numero_dossier', 'like', 'A-%')
+            ->whereRaw('CAST(SUBSTRING(numero_dossier, 3) AS SIGNED) IS NOT NULL')
+            ->max('numero_dossier');
+    
+        $counter = $latestDossier ? (int)substr($latestDossier, 2) + 1 : 1802;
+    
+        $numeroDossier = 'A-' . $counter;
+    
+        $input['numero_dossier'] = $numeroDossier;
+    
         $dossierPatient = $this->dossierPatientRepository->create($input);
         $dossierPatient->save();
-
+        
         $dossierPatient::where('numero_dossier', $request->numero_dossier)->get();
         $DossierPatient_typeHandycape = new DossierPatient_typeHandycape;
         $DossierPatient_typeHandycape->type_handicap_id = $request->type_handicap_id;
