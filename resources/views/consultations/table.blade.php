@@ -7,6 +7,7 @@
                 <th>Prénom</th>
                 <th>Téléphone</th>
                 <th>Date d'enregistrement</th>
+                <th>État consultation</th>
                 <th>Date consultation</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -18,6 +19,15 @@
                     <td>{{ $consultation->prenom }}</td>
                     <td>{{ $consultation->telephone }}</td>
                     <td>{{ $consultation->date_enregistrement }}</td>
+                    <td>
+                        @if($consultation->etat === 'enRendezVous')
+                          En rendez-vous
+                        @elseif($consultation->etat === 'enAttente')
+                          En attente
+                        @elseif($consultation->etat === 'enConsultation')
+                          En consultation
+                        @endif
+                    </td>
                     <td>{{ $consultation->date_consultation }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['consultations.destroy', $consultation->id], 'method' => 'delete']) !!}

@@ -33,7 +33,7 @@ $patientId = $explodeQuery[1];
 <!-- Date Enregsitrement Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_enregsitrement', __('models/dossierPatients.fields.date_enregsitrement').':') !!}
-    {!! Form::date('date_enregsitrement', null, ['class' => 'form-control','id'=>'date_enregsitrement']) !!}
+    {!! Form::datetimeLocal('date_enregsitrement', null, ['class' => 'form-control','id'=>'date_enregsitrement']) !!}
 </div>
 
 

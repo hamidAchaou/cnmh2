@@ -25,6 +25,7 @@
                         <div class="card-body">
 
                             {!! Form::open(['route' => 'patients.store', 'enctype' => 'multipart/form-data']) !!}
+                            <p class="required-field">@lang('crud.requiredFields')</p>
                             <div class="row">
                                 @include('patients.fields')
                             </div>

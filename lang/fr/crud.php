@@ -27,6 +27,7 @@ return [
 'previous' => 'Précédent',
 'selectUser' => 'Sélectionnez un utilisateur',
 'selectRole' => 'Sélectionnez un rôle',
-'selectPermissions' => 'Sélectionnez des permissions'
+'selectPermissions' => 'Sélectionnez des permissions',
+'requiredFields' => 'Les champs indiqués par * sont obligatoires.'
 
 ];
