@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use App\Models\User;
 
 use App\Exports\ExportPermission;
 use App\Import\importPermissions;
@@ -151,40 +153,116 @@ class PermissionController extends AppBaseController
     }
 
 
-    public function addPermissionsAutomatically()
+    public function addPermissionsAuto()
     {
-        $controllers = [
-            'CouvertureMedicalController',
-            'ConsultationController',
-            'DossierPatientController',
-            'EmployeController',
-            'EtatCivilController',
-            'FonctionController',
-            'NiveauScolaireController',
-            'OrientationExterneController',
-            'PatientController',
-            'ReclamationController',
-            'RendezVousController',
-            'RoleController',
-            'ServiceController',
-            'TuteurController',
-            'TypeHandicapController'
-        ];
-    
-        $actions = ['create', 'store', 'show', 'edit', 'update', 'destroy', 'index', 'import', 'export','addPermissionsAutomatically'];
-    
+        $successMessage = __('messages.saved', ['model' => __('models/permissions.singular')]);
+        $controllers = $this->getControllerNames();
+
+        foreach($controllers as $controller){
+            if($controller === 'PermissionController'){
+                $actions = ['create', 'store', 'show', 'edit', 'update', 'destroy', 'index', 'import', 'export', 'addPermissionsAuto'];
+            }else{
+                $actions = ['create', 'store', 'show', 'edit', 'update', 'destroy', 'index', 'import', 'export'];
+            }
+        }
+
+        
         foreach ($controllers as $controller) {
             $this->createPermissionsForController($controller, $actions);
         }
+        
+        flash($successMessage)->success()->important();
+        return redirect()->back();
     }
+
+
+    private function getControllerNames()
+    {
+        $controllersDirectory = app_path('Http/Controllers');
+        $controllerFiles = glob($controllersDirectory . '/*.php');
+        $controllerNames = [];
     
+        foreach ($controllerFiles as $file) {
+            $filename = basename($file, '.php');
+    
+            if (
+                $filename !== 'AppBaseController' &&
+                $filename !== 'HomeController' &&
+                strpos($filename, 'Controller') !== 0
+            ) {
+                $controllerNames[] = $filename;
+            }
+        }
+    
+        return $controllerNames;
+    }
+
     private function createPermissionsForController($controller, $actions)
     {
         foreach ($actions as $action) {
             $permissionName = $action . '-' . $controller;
-            Permission::create(['name' => $permissionName]);
+
+            if (!Permission::where('name', $permissionName)->exists()) {
+                Permission::create(['name' => $permissionName]);
+            }
         }
     }
+
+
+    public function showRolePermission($id)
+    {
+        
+        $user = User::findOrFail($id);
+
+        $userRole = $user->roles;
+
+        $userPermissions = $user->permissions()->pluck('id')->toArray(); 
+        $roles = Role::pluck('name','id');
+        
+        $permissions = Permission::pluck('name', 'id');
+
+        return view('gestion_permissions.create', compact('userRole', 'roles', 'permissions', 'userPermissions', 'user'));
+    }
+
+    public function assignRolePermission(Request $request)
+    {
+
+        $user = User::where('name', $request->input('user'))->first();
+        $removeAssignRoles = false;
+        $removeAssignPermissions = false;
+
+        if ($user) {
+            $role = Role::find($request->input('role'));
+            $permissions = Permission::find($request->input('permissions', []));
+
+            if ($role) {
+                $user->assignRole($role);
+            } else {
+                $removeAssignRoles = $user->syncRoles([]);
+            }
+
+            if ($permissions) {
+                $user->syncPermissions($permissions);
+            } else {
+                $removeAssignPermissions = $user->syncPermissions([]);
+            }
+
+            if ($removeAssignRoles) {
+                return back()->with('success', 'Rôle supprimé avec succès.');
+            }elseif($removeAssignPermissions){
+                return back()->with('success', 'Autorisation supprimée avec succès.');
+            }elseif($removeAssignRoles && $removeAssignPermissions){
+                return back()->with('success', 'Rôle et autorisation supprimés avec succès.');
+            }
+
+            return back()->with('success', 'Rôle et autorisation attribués avec succès.');
+        } else {
+            return back()>with('error', 'Utilisateur non trouvé.');
+        }
+    }
+
+    
+    
     
 
     // public function import(Request $request)

@@ -13,16 +13,34 @@ class PermissionSeeder extends Seeder
     public function run(): void
     {
         Permission::create([
-            'name' => 'index-EtatCivil',
+            'name' => 'index-EtatCivilController',
         ]);
 
         Permission::create([
-            'name' => 'index-Permission',
+            'name' => 'index-PermissionController',
         ]);
 
         Permission::create([
-            'name' => 'addPermissionsAutomatically-Permission',
+            'name' => 'index-RoleController',
         ]);
+
+        Permission::create([
+            'name' => 'addPermissionsAuto-PermissionController',
+        ]);
+
+        Permission::create([
+            'name' => 'index-UserController',
+        ]);
+        Permission::create([
+            'name' => 'showRolePermission-PermissionController',
+        ]);
+        Permission::create([
+            'name' => 'assignRolePermission-PermissionController',
+        ]);
+
+        
+
+       
 
 
         

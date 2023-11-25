@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
                        href="{{ route('roles.create') }}">
-                         @lang('crud.add_new') Role
+                         @lang('crud.add_new')
                     </a>
                 </div>
             </div>

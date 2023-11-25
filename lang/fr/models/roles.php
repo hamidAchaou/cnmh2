@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'Role',
-    'plural' => 'Roles',
+    'singular' => 'Rôle',
+    'plural' => 'Rôles',
     'fields' => [
         'id' => 'Id',
         'name' => 'Nom',

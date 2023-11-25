@@ -4,23 +4,15 @@
 
     <section class="content-header">
         <div class="container-fluid">
-            <div class="d-flex justify-content-between">
+            <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('models/permissions.plural')</h1>
+                    <h1>@lang('models/users.plural')</h1>
                 </div>
-                <div class="">
-                    
-                    <div class="">
-                        <a class="btn btn-primary"
-                        href="{{ route('permissions.create') }}">
-                            @lang('crud.add_new')
-                        </a>
-                        <a class="btn btn-primary ml-2"
-                        href="{{ route('auto-create-permissions') }}">
-                            @lang('crud.add_new') automatique
-                        </a>
-                    </div>
-                   
+                <div class="col-sm-6">
+                    <a class="btn btn-primary float-right"
+                       href="{{ route('users.create') }}">
+                         @lang('crud.add_new') User
+                    </a>
                 </div>
             </div>
         </div>
@@ -51,7 +43,7 @@
         </div>
 
         <div class="card" id="table-container">
-            @include('permissions.table')
+            @include('users.table')
         </div>
     </div>
 
@@ -63,7 +55,7 @@
         var searchQuery = ''
 
         const search = (query = '', page = 1) => {
-            $.ajax('{{ route('permissions.index') }}', {
+            $.ajax('{{ route('users.index') }}', {
                 data: {
                     query: query,
                     page: page

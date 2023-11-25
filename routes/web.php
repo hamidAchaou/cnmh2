@@ -13,6 +13,10 @@ use App\Http\Controllers\NiveauScolaireController;
 use App\Http\Controllers\CouvertureMedicalController;
 use App\Http\Controllers\RendezVousController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\RolePermissionController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -130,6 +134,11 @@ Route::get('roles_export', [App\Http\Controllers\RoleController::class, 'export'
  * Permission links
  */
 Route::resource('permissions', App\Http\Controllers\PermissionController::class);
-Route::get('/ajouter/permission', [App\Http\Controllers\PermissionController::class,'addPermissionsAutomatically'])->name('auto-create-permissions');
+Route::get('/ajouter/permission', [App\Http\Controllers\PermissionController::class,'addPermissionsAuto'])->name('auto-create-permissions');
 Route::get('permissions_export', [App\Http\Controllers\PermissionController::class, 'export'])->name('permissions.export'); // Export
 Route::post('/import_permissions', [App\Http\Controllers\PermissionController::class, 'import'])->name('permissions.import'); // Import
+
+
+Route::resource('users', App\Http\Controllers\UserController::class);
+Route::get('/manage/permissions-roles/{id}', [App\Http\Controllers\PermissionController::class, 'showRolePermission'])->name('manage.role.permission');
+Route::post('/assign-role-permission', [App\Http\Controllers\PermissionController::class, 'assignRolePermission'])->name('assign.role.permission');

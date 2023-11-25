@@ -42,7 +42,7 @@ class AppMenuSeeder extends Seeder
         ]);
 
         $permissionsGroup = MenuGroup::create([
-            'nom' => 'Gestions Permissions',
+            'nom' => 'Gestion Permissions',
             'description' => "admin",
             'icon' => '<i class="fa-solid fa-gears"></i>',
         ]);
@@ -139,10 +139,24 @@ class AppMenuSeeder extends Seeder
                 'menu_group_id' => $parametresGroup->id,
             ],
             [
-                'nom' => __('Permission'),
+                'nom' => __('Rôles'),
+                'description' => "admin",
+                'icon' => null,
+                'url' => 'roles.index',
+                'menu_group_id' => $permissionsGroup->id,
+            ],
+            [
+                'nom' => __('Permissions'),
                 'description' => "admin",
                 'icon' => null,
                 'url' => 'permissions.index',
+                'menu_group_id' => $permissionsGroup->id,
+            ],
+            [
+                'nom' => __('Attribuer des autorisations'),
+                'description' => "admin",
+                'icon' => null,
+                'url' => 'users.index',
                 'menu_group_id' => $permissionsGroup->id,
             ]
         ];

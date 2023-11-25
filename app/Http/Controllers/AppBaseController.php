@@ -23,15 +23,9 @@ class AppBaseController extends Controller
 
         $controller = class_basename(get_class($this));
         $action = $method;
-        $model = str_replace('Controller', '', $controller);
-        $modelPath = 'App\\Models\\'.$model; 
-        $permissions = $action . '-' . $model; 
-        $user = auth()->user();
-        if ($user && $user->hasRole('admin')) {
-            $this->authorize($permissions);  
-        }
-      
-        
+        $permissions = $action . '-' . $controller; 
+        // dd($permissions);
+        $this->authorize($permissions);  
         return parent::callAction($method, $parameters);
     }
 

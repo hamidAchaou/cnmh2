@@ -30,9 +30,13 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
 
         $permissionAdmin = [
-            'index-EtatCivil',
-            'index-Permission',
-            'addPermissionsAutomatically-Permission'
+            'index-EtatCivilController',
+            'index-PermissionController',
+            'addPermissionsAuto-PermissionController',
+            'index-UserController',
+            'showRolePermission-PermissionController',
+            'assignRolePermission-PermissionController',
+
         ];
 
         $admin->givePermissionTo($permissionAdmin);
