@@ -21,8 +21,8 @@
                     {{-- <td>{{ $dossierPatient->date_enregsitrement }}</td> --}}
 
                     <td style="width: 120px">
-                        {{-- {!! Form::open(['route' => ['dossierPatients.destroy', $dossierPatient->id], 'method' =>
-                        'delete']) !!} --}}
+                        {!! Form::open(['route' => ['dossier-patients.destroy', $dossierPatient->id], 'method' =>
+                        'delete']) !!} 
 
                         <div class='btn-group'>
                             <a href="{{ route('dossier-patients.show', [$dossierPatient->id]) }}"

@@ -18,5 +18,8 @@ return [
             'select_type_handicap_id'=>"Déterminer le type d'handicapé",
         ],
     ],
+    'OrientationExterne' => 'Ce dossier est en cours d\'orientation externe',
+    'enconsultation' => 'Ce dossier est en consultation ou en rendez-vous'
+
 
 ];

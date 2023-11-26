@@ -21,6 +21,12 @@ use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
 use App\Models\DossierPatientConsultation;
+use App\Models\OrientationExterne;
+
+
+
+
+
 
 /**
  * @author CodeCampers, Boukhar Soufiane
@@ -223,18 +229,35 @@ class DossierPatientController extends AppBaseController
     {
         $dossierPatient = $this->dossierPatientRepository->find($id);
 
+        if ($dossierPatient) {
+            $dossierPatientID = $dossierPatient->id;
+            $OrientationExterne = OrientationExterne::where('dossier_patient_id', $dossierPatientID)->first();
+            $dossierPatientConsultation = DossierPatientConsultation::where('dossier_patient_id', $dossierPatientID)->first();
+            $DossierPatient_typeHandycape = DossierPatient_typeHandycape::where('dossier_patient_id', $dossierPatientID)->first();
+
+            if ($OrientationExterne) {
+                Flash::error(__('messages.cannotDeleted', ['model' => __('models/dossierPatients.OrientationExterne')]));
+            } else {
+                if ($dossierPatientConsultation) {
+                    $dossierPatientConsultation->delete();
+                    if ($DossierPatient_typeHandycape) {
+                        $DossierPatient_typeHandycape->delete();
+                    }
+                    $this->dossierPatientRepository->delete($id);
+                     Flash::success(__('messages.deleted', ['model' => __('models/dossierPatients.singular')]));
+                } else {
+                    Flash::error(__('messages.cannotDeletedEnCounsultation', ['model' => __('models/dossierPatients.enconsultation')]));
+                }
+            }
+            
+        }
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular') . ' ' . __('messages.not_found'));
-
-            return redirect(route('dossier-patients.index'));
         }
-
-        $this->dossierPatientRepository->delete($id);
-
-        Flash::success(__('messages.deleted', ['model' => __('models/dossierPatients.singular')]));
 
         return redirect(route('dossier-patients.index'));
     }
+
     public function parent(Request $request)
     {
         $query = $request->input('query');
