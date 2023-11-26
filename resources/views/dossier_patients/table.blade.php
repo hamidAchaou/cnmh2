@@ -4,7 +4,7 @@
             <thead>
                 <tr>
                     <th>N° dossier</th>
-                    <th>Patient</th>
+                    <th>Bénéficiaire</th>
                     {{-- <th>Couverture Medical</th> --}}
                     <th>État de processus</th>
                     {{-- <th>Date Enregsitrement</th> --}}
