@@ -44,7 +44,7 @@ class ConsultationController extends AppBaseController
 
             $consultations = DossierPatientConsultation::join('dossier_patients', 'dossier_patient_consultation.dossier_patient_id', '=', 'dossier_patients.id')
             ->join('consultations', 'dossier_patient_consultation.consultation_id', '=', 'consultations.id')
-            ->join('patients', 'dossier_patients.patient_id', '=', 'patients.id')
+            ->join('patients', 'dossier_patients.id', '=', 'patients.id')
              ->where([
                 ["consultations.type","medecinGeneral"]
              ])
@@ -116,6 +116,7 @@ class ConsultationController extends AppBaseController
     public function show($model, $id)
     {
         $title = $model;
+
         $consultation = $this->consultationRepository->find($id);
 
         if (empty($consultation)) {

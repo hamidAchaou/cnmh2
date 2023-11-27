@@ -7,7 +7,8 @@
                 <th>Prénom</th>
                 <th>Téléphone</th>
                 <th>Date d'enregistrement</th>
-                <th>État consultation</th>
+                <th>État</th>
+                <th>Orientation</th>
                 <th>Date consultation</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -26,6 +27,11 @@
                           En attente
                         @elseif($consultation->etat === 'enConsultation')
                           En consultation
+                        @endif
+                    </td>
+                    <td>
+                        @if($consultation->type === 'medecinGeneral')
+                         Médecin générale
                         @endif
                     </td>
                     <td>{{ $consultation->date_consultation }}</td>
