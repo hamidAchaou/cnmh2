@@ -55,6 +55,15 @@
     </a>
 </li>
 @endcan
+@can('index-EmployeController')
+<li class="nav-item">
+    <a href="{{ route('employes.index') }}"
+        class="nav-link {{ Route::is('employes.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>        
+        <p>Employés</p>
+    </a>
+</li>
+@endcan
 
 {{-- 
 @foreach (app_menu() as $group => $items)

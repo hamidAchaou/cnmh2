@@ -111,7 +111,32 @@ class PermissionSeeder extends Seeder
             'name' => 'importer-NiveauScolaireController'
         ]);
 
-       
+        // Adding employes crud permission
+
+        Permission::create([
+            'name' => 'index-EmployeController',
+        ]);
+        Permission::create([
+            'name' => 'create-EmployeController',
+        ]);
+        Permission::create([
+            'name' => 'show-EmployeController',
+        ]);
+        Permission::create([
+            'name' => 'edit-EmployeController',
+        ]);
+        Permission::create([
+            'name' => 'update-EmployeController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-EmployeController',
+        ]);
+        Permission::create([
+            'name' => 'export-EmployeController',
+        ]);
+        Permission::create([
+            'name' => 'import-EmployeController',
+        ]);
 
         Permission::create([
             'name' => 'addPermissionsAuto-PermissionController',
