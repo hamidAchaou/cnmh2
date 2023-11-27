@@ -38,6 +38,21 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'index-PermissionController',
         ]);
+        Permission::create([
+            'name' => 'create-PermissionController',
+        ]);
+        Permission::create([
+            'name' => 'show-PermissionController',
+        ]);
+        Permission::create([
+            'name' => 'edit-PermissionController',
+        ]);
+        Permission::create([
+            'name' => 'update-PermissionController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-PermissionController',
+        ]);
 
         Permission::create([
             'name' => 'index-RoleController',

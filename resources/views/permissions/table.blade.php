@@ -16,17 +16,23 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['permissions.destroy', $permission->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
+                            @can('show-PermissionController')
                             <a href="{{ route('permissions.show', [$permission->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-eye"></i>
                             </a>
+                            @endcan
+                            @can('edit-PermissionController')
                             <a href="{{ route('permissions.edit', [$permission->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-edit"></i>
                             </a>
+                            @endcan
+                            @can('destroy-PermissionController')
                             {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                         </div>
                         {!! Form::close() !!}
+                        @endcan
                     </td>
                 </tr>
             @endforeach
