@@ -64,6 +64,15 @@
     </a>
 </li>
 @endcan
+@can('index-CouvertureMedicalController')
+<li class="nav-item">
+    <a href="{{ route('couvertureMedicals.index') }}"
+        class="nav-link {{ Route::is('couvertureMedicals.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>        
+        <p>Couverture Médicale</p>
+    </a>
+</li>
+@endcan
 
 {{-- 
 @foreach (app_menu() as $group => $items)

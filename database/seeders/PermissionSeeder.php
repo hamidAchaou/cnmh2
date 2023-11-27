@@ -138,6 +138,33 @@ class PermissionSeeder extends Seeder
             'name' => 'import-EmployeController',
         ]);
 
+         // Adding Couverture Médicale crud permission
+
+         Permission::create([
+            'name' => 'index-CouvertureMedicalController',
+        ]);
+        Permission::create([
+            'name' => 'create-CouvertureMedicalController',
+        ]);
+        Permission::create([
+            'name' => 'show-CouvertureMedicalController',
+        ]);
+        Permission::create([
+            'name' => 'edit-CouvertureMedicalController',
+        ]);
+        Permission::create([
+            'name' => 'update-CouvertureMedicalController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-CouvertureMedicalController',
+        ]);
+        Permission::create([
+            'name' => 'export-CouvertureMedicalController',
+        ]);
+        Permission::create([
+            'name' => 'import-CouvertureMedicalController',
+        ]);
+
         Permission::create([
             'name' => 'addPermissionsAuto-PermissionController',
         ]);
