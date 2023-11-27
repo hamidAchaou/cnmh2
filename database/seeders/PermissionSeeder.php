@@ -12,9 +12,28 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
+        // Admin EtaCivil Permission 
+
         Permission::create([
             'name' => 'index-EtatCivilController',
         ]);
+        Permission::create([
+            'name' => 'create-EtatCivilController',
+        ]);
+        Permission::create([
+            'name' => 'edit-EtatCivilController',
+        ]);
+        Permission::create([
+            'name' => 'show-EtatCivilController',
+        ]);
+        Permission::create([
+            'name' => 'update-EtatCivilController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-EtatCivilController',
+        ]);
+
+        // Admin adding Permissions permission
 
         Permission::create([
             'name' => 'index-PermissionController',

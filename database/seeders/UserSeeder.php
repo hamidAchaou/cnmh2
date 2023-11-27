@@ -31,6 +31,11 @@ class UserSeeder extends Seeder
 
         $permissionAdmin = [
             'index-EtatCivilController',
+            'create-EtatCivilController',
+            'edit-EtatCivilController',
+            'show-EtatCivilController',
+            'update-EtatCivilController',
+            'destroy-EtatCivilController',
             'index-PermissionController',
             'addPermissionsAuto-PermissionController',
             'index-UserController',
