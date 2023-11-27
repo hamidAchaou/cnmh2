@@ -37,6 +37,15 @@
     </a>
 </li>
 @endcan
+@can('index-RoleController')
+<li class="nav-item">
+    <a href="{{ route('roles.index') }}"
+        class="nav-link {{ Route::is('roles.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>        
+        <p>Rôles</p>
+    </a>
+</li>
+@endcan
 
 
 {{-- 
