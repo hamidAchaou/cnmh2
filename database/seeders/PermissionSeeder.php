@@ -165,6 +165,33 @@ class PermissionSeeder extends Seeder
             'name' => 'import-CouvertureMedicalController',
         ]);
 
+         // Adding Type Handicap crud permission
+
+         Permission::create([
+            'name' => 'index-TypeHandicapController',
+        ]);
+        Permission::create([
+            'name' => 'create-TypeHandicapController',
+        ]);
+        Permission::create([
+            'name' => 'show-TypeHandicapController',
+        ]);
+        Permission::create([
+            'name' => 'edit-TypeHandicapController',
+        ]);
+        Permission::create([
+            'name' => 'update-TypeHandicapController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-TypeHandicapController',
+        ]);
+        Permission::create([
+            'name' => 'export-TypeHandicapController',
+        ]);
+        Permission::create([
+            'name' => 'import-TypeHandicapController',
+        ]);
+
         Permission::create([
             'name' => 'addPermissionsAuto-PermissionController',
         ]);

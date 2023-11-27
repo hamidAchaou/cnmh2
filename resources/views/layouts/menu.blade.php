@@ -73,6 +73,15 @@
     </a>
 </li>
 @endcan
+@can('index-TypeHandicapController')
+<li class="nav-item">
+    <a href="{{ route('typeHandicaps.index') }}"
+        class="nav-link {{ Route::is('typeHandicaps.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>        
+        <p>Type d'handicaps</p>
+    </a>
+</li>
+@endcan
 
 {{-- 
 @foreach (app_menu() as $group => $items)
