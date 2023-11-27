@@ -84,6 +84,34 @@ class PermissionSeeder extends Seeder
             'name' => 'importer-RoleController',
         ]);
 
+        // Admin , Adding Niveau Scolaire permission
+        
+        Permission::create([
+            'name' => 'index-NiveauScolaireController'
+        ]);
+        Permission::create([
+            'name' => 'show-NiveauScolaireController'
+        ]);
+        Permission::create([
+            'name' => 'create-NiveauScolaireController'
+        ]);
+        Permission::create([
+            'name' => 'edit-NiveauScolaireController'
+        ]);
+        Permission::create([
+            'name' => 'update-NiveauScolaireController'
+        ]);
+        Permission::create([
+            'name' => 'destroy-NiveauScolaireController'
+        ]);
+        Permission::create([
+            'name' => 'exporter-NiveauScolaireController'
+        ]);
+        Permission::create([
+            'name' => 'importer-NiveauScolaireController'
+        ]);
+
+       
 
         Permission::create([
             'name' => 'addPermissionsAuto-PermissionController',

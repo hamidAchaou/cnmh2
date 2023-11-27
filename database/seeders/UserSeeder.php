@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         $admin = User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'password'=> $password,
+            'password' => $password,
             'created_at' => $now,
             'updated_at' => $now,
         ]);
@@ -51,6 +51,15 @@ class UserSeeder extends Seeder
             'edit-RoleController',
             'update-RoleController',
             'destroy-RoleController',
+
+            'index-NiveauScolaireController',
+            'show-NiveauScolaireController',
+            'create-NiveauScolaireController',
+            'edit-NiveauScolaireController',
+            'update-NiveauScolaireController',
+            'destroy-NiveauScolaireController',
+            'exporter-NiveauScolaireController',
+            'importer-NiveauScolaireController',
             'addPermissionsAuto-PermissionController',
             'index-UserController',
             'showRolePermission-PermissionController',
@@ -60,18 +69,18 @@ class UserSeeder extends Seeder
 
         $admin->givePermissionTo($permissionAdmin);
         $user = User::insert([
-           
+
             [
                 'name' => 'service social',
                 'email' => 'social@gmail.com',
-                'password'=>$social,
+                'password' => $social,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
             [
                 'name' => 'Medecin générale',
                 'email' => 'medecin@gmail.com',
-                'password'=>$medecin,
+                'password' => $medecin,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],

@@ -46,7 +46,15 @@
     </a>
 </li>
 @endcan
-
+@can('index-NiveauScolaireController')
+<li class="nav-item">
+    <a href="{{ route('niveauScolaires.index') }}"
+        class="nav-link {{ Route::is('niveauScolaires.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>        
+        <p>Niveau Scolaires</p>
+    </a>
+</li>
+@endcan
 
 {{-- 
 @foreach (app_menu() as $group => $items)
