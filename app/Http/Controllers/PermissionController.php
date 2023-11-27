@@ -16,6 +16,8 @@ use App\Models\User;
 use App\Exports\ExportPermission;
 use App\Import\importPermissions;
 use App\Imports\ImportPermissions as ImportsImportPermissions;
+use Illuminate\Support\Facades\Route;
+
 
 class PermissionController extends AppBaseController
 {
@@ -158,17 +160,21 @@ class PermissionController extends AppBaseController
         $successMessage = __('messages.saved', ['model' => __('models/permissions.singular')]);
         $controllers = $this->getControllerNames();
 
-        foreach($controllers as $controller){
-            if($controller === 'PermissionController'){
-                $actions = ['create', 'store', 'show', 'edit', 'update', 'destroy', 'index', 'import', 'export', 'addPermissionsAuto'];
-            }else{
-                $actions = ['create', 'store', 'show', 'edit', 'update', 'destroy', 'index', 'import', 'export'];
+        $actions = [];
+
+        foreach ($controllers as $controller) {
+            $controllerParts = explode('@', $controller);
+        
+            if (count($controllerParts) >= 2) {
+                $action = $controllerParts[1];
+                $actions[] = $action;
             }
         }
-
+        
+        $uniqueActions = array_unique($actions);
         
         foreach ($controllers as $controller) {
-            $this->createPermissionsForController($controller, $actions);
+            $this->createPermissionsForController($controller, $uniqueActions);
         }
         
         flash($successMessage)->success()->important();
@@ -177,22 +183,37 @@ class PermissionController extends AppBaseController
 
 
     private function getControllerNames()
+   {
+    $controllerNames = [];
+
+    foreach (Route::getRoutes()->getRoutes() as $route)
     {
-        $controllersDirectory = app_path('Http/Controllers');
-        $controllerFiles = glob($controllersDirectory . '/*.php');
-        $controllerNames = [];
-    
-        foreach ($controllerFiles as $file) {
-            $filename = basename($file, '.php');
-    
-            if (
-                $filename !== 'AppBaseController' &&
-                $filename !== 'HomeController' &&
-                strpos($filename, 'Controller') !== 0
-            ) {
-                $controllerNames[] = $filename;
+        $action = $route->getAction();
+
+        if (array_key_exists('controller', $action))
+        {
+            $fullControllerName = $action['controller'];
+
+            if (strpos($fullControllerName, 'App\Http\Controllers\\') === 0) {
+                $controllerNames[] = str_replace('App\Http\Controllers\\', '', $fullControllerName);
             }
         }
+    }
+        // $controllersDirectory = app_path('Http/Controllers');
+        // $controllerFiles = glob($controllersDirectory . '/*.php');
+        // $controllerNames = [];
+    
+        // foreach ($controllerFiles as $file) {
+        //     $filename = basename($file, '.php');
+    
+        //     if (
+        //         $filename !== 'AppBaseController' &&
+        //         $filename !== 'HomeController' &&
+        //         strpos($filename, 'Controller') !== 0
+        //     ) {
+        //         $controllerNames[] = $filename;
+        //     }
+        // }
     
         return $controllerNames;
     }
