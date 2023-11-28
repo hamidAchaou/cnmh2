@@ -154,81 +154,53 @@ class PermissionController extends AppBaseController
         return Excel::download(new ExportPermission, 'permissions.xlsx');
     }
 
-
+    // TODO: Code refactoring
     public function addPermissionsAuto()
     {
         $successMessage = __('messages.saved', ['model' => __('models/permissions.singular')]);
         $controllers = $this->getControllerNames();
 
-        $actions = [];
+        $permissions = [];
 
         foreach ($controllers as $controller) {
-            $controllerParts = explode('@', $controller);
-        
-            if (count($controllerParts) >= 2) {
-                $action = $controllerParts[1];
-                $actions[] = $action;
-            }
+            $permission = str_replace(['Controller', '@'], ['', '-'], $controller);
+            $permission = implode('-', array_reverse(explode('-', $permission)));
+            $permissions[] = $permission;
         }
-        
-        $uniqueActions = array_unique($actions);
-        
-        foreach ($controllers as $controller) {
-            $this->createPermissionsForController($controller, $uniqueActions);
+
+        foreach ($permissions as $permission) {
+            $this->createPermissionsForController($permission);
         }
-        
+
         flash($successMessage)->success()->important();
         return redirect()->back();
     }
 
-
     private function getControllerNames()
-   {
-    $controllerNames = [];
-
-    foreach (Route::getRoutes()->getRoutes() as $route)
     {
-        $action = $route->getAction();
+        $controllerNames = [];
 
-        if (array_key_exists('controller', $action))
-        {
-            $fullControllerName = $action['controller'];
+        foreach (Route::getRoutes()->getRoutes() as $route) {
+            $action = $route->getAction();
 
-            if (strpos($fullControllerName, 'App\Http\Controllers\\') === 0) {
-                $controllerNames[] = str_replace('App\Http\Controllers\\', '', $fullControllerName);
+            if (array_key_exists('controller', $action)) {
+                $fullControllerName = $action['controller'];
+
+                if (strpos($fullControllerName, 'App\Http\Controllers\\') === 0 && strpos($fullControllerName, 'App\Http\Controllers\Auth\\') !== 0) {
+                    $controllerNames[] = str_replace('App\Http\Controllers\\', '', $fullControllerName);
+                }
             }
         }
-    }
-        // $controllersDirectory = app_path('Http/Controllers');
-        // $controllerFiles = glob($controllersDirectory . '/*.php');
-        // $controllerNames = [];
-    
-        // foreach ($controllerFiles as $file) {
-        //     $filename = basename($file, '.php');
-    
-        //     if (
-        //         $filename !== 'AppBaseController' &&
-        //         $filename !== 'HomeController' &&
-        //         strpos($filename, 'Controller') !== 0
-        //     ) {
-        //         $controllerNames[] = $filename;
-        //     }
-        // }
-    
+
         return $controllerNames;
     }
 
-    private function createPermissionsForController($controller, $actions)
+    private function createPermissionsForController($permission)
     {
-        foreach ($actions as $action) {
-            $permissionName = $action . '-' . $controller;
-
-            if (!Permission::where('name', $permissionName)->exists()) {
-                Permission::create(['name' => $permissionName]);
-            }
+        if (!Permission::where('name', $permission)->exists()) {
+            Permission::create(['name' => $permission]);
         }
     }
-
 
     public function showRolePermission($id)
     {
