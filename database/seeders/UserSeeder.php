@@ -36,6 +36,8 @@ class UserSeeder extends Seeder
             'show-EtatCivilController',
             'update-EtatCivilController',
             'destroy-EtatCivilController',
+            'export-EtatCivilController',
+            'import-EtatCivilController',
             'index-PermissionController',
             'create-PermissionController',
             'show-PermissionController',

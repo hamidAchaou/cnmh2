@@ -81,12 +81,16 @@
             @include('adminlte-templates::common.paginate', ['records' => $etatCivils])
         </div>
         <div class="float-left">
+        @can('export-EtatCivilController')
             <a href="{{ route('etatCivils.export') }}" class="btn btn-default swalDefaultQuestion">
                 <i class="fas fa-download"></i> Exporter
             </a>
+            @endcan
+            @can('import-EtatCivilController')
             <button class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModel">
                 <i class="fas fa-file-import"></i> Importer
             </button>
+            @endcan
         </div>
     </div>
 </div>

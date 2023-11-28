@@ -32,6 +32,12 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'destroy-EtatCivilController',
         ]);
+        Permission::create([
+            'name' => 'export-EtatCivilController',
+        ]);
+        Permission::create([
+            'name' => 'import-EtatCivilController',
+        ]);
 
         // Admin adding Permissions permission
 
