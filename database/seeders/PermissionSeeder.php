@@ -90,10 +90,10 @@ class PermissionSeeder extends Seeder
             'name' => 'destroy-RoleController',
         ]);
         Permission::create([
-            'name' => 'exporter-RoleController',
+            'name' => 'export-RoleController',
         ]);
         Permission::create([
-            'name' => 'importer-RoleController',
+            'name' => 'import-RoleController',
         ]);
 
         // Admin , Adding Niveau Scolaire permission
