@@ -192,12 +192,37 @@ class PermissionSeeder extends Seeder
             'name' => 'import-TypeHandicapController',
         ]);
 
+           // Adding Services (prestations) crud permission
+
+           Permission::create([
+            'name' => 'index-ServiceController',
+        ]);
         Permission::create([
-            'name' => 'addPermissionsAuto-PermissionController',
+            'name' => 'create-ServiceController',
+        ]);
+        Permission::create([
+            'name' => 'show-ServiceController',
+        ]);
+        Permission::create([
+            'name' => 'edit-ServiceController',
+        ]);
+        Permission::create([
+            'name' => 'update-ServiceController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-ServiceController',
+        ]);
+        Permission::create([
+            'name' => 'export-ServiceController',
+        ]);
+        Permission::create([
+            'name' => 'import-ServiceController',
         ]);
 
+        // Adding Auto permissions button action permissions
+
         Permission::create([
-            'name' => 'index-UserController',
+            'name' => 'addPermissionsAuto-PermissionController',
         ]);
         Permission::create([
             'name' => 'showRolePermission-PermissionController',
@@ -205,6 +230,38 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'assignRolePermission-PermissionController',
         ]);
+
+        // Adding User crud permissions
+
+        Permission::create([
+            'name' => 'index-UserController',
+        ]);
+        Permission::create([
+            'name' => 'create-UserController',
+        ]);
+        Permission::create([
+            'name' => 'show-UserController',
+        ]);
+        Permission::create([
+            'name' => 'edit-UserController',
+        ]);
+        Permission::create([
+            'name' => 'update-UserController',
+        ]);
+        Permission::create([
+            'name' => 'store-UserController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-UserController',
+        ]);
+        Permission::create([
+            'name' => 'import-UserController',
+        ]);
+        Permission::create([
+            'name' => 'export-UserController',
+        ]);
+
+       
 
         
 

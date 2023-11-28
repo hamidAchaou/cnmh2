@@ -82,6 +82,15 @@
     </a>
 </li>
 @endcan
+@can('index-ServiceController')
+<li class="nav-item">
+    <a href="{{ route('services.index') }}"
+        class="nav-link {{ Route::is('services.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>        
+        <p>Prestations</p>
+    </a>
+</li>
+@endcan
 
 {{-- 
 @foreach (app_menu() as $group => $items)
