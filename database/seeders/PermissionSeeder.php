@@ -117,10 +117,10 @@ class PermissionSeeder extends Seeder
             'name' => 'destroy-NiveauScolaireController'
         ]);
         Permission::create([
-            'name' => 'exporter-NiveauScolaireController'
+            'name' => 'export-NiveauScolaireController'
         ]);
         Permission::create([
-            'name' => 'importer-NiveauScolaireController'
+            'name' => 'import-NiveauScolaireController'
         ]);
 
         // Adding employes crud permission

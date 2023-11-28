@@ -46,12 +46,12 @@
             @include('adminlte-templates::common.paginate', ['records' => $niveauScolaires])
         </div>
         <div class="float-left">
-            @can('exporter-NiveauScolaireController')
+            @can('export-NiveauScolaireController')
             <a href="{{ route('niveauScolaires.export') }}" class="btn btn-default swalDefaultQuestion">
                 <i class="fas fa-download"></i> Exporter
             </a>
             @endcan
-            @can('importer-NiveauScolaireController')
+            @can('import-NiveauScolaireController')
             <button  class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModel">
                 <i class="fas fa-file-import"></i> Importer
             </button>
