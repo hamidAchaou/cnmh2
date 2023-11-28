@@ -7,12 +7,18 @@
     </a>
 </li>
 @endcan
-
+<li class="nav-item ">
+    <a href="#" class="nav-link ">
+        <i class="fa-solid fa-gears"></i>
+        <p class="pl-2">
+            Parametres
+        </p>
+    </a>
+    <ul class="nav nav-treeview" style="">
 @can('index-UserController')
 <li class="nav-item">
-    <a href="{{ route('users.index') }}"
-        class="nav-link {{ Route::is('users.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
+    <a href="{{ route('users.index') }}" class="nav-link {{ Route::is('users.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>
         <p>Attribuer Roles</p>
     </a>
 </li>
@@ -22,27 +28,25 @@
 <li class="nav-item">
     <a href="{{ route('permissions.index') }}"
         class="nav-link {{ Route::is('permissions.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
+        <i class="fa-solid fa-gears"></i>
         <p>Permissions</p>
     </a>
 </li>
 @endcan
 
-@can('index-EtatCivilController')
+@can('index-RoleController')
 <li class="nav-item">
-    <a href="{{ route('etatCivils.index') }}"
-        class="nav-link {{ Route::is('etatCivils.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
-        <p>Etat Civil</p>
+    <a href="{{ route('roles.index') }}" class="nav-link {{ Route::is('roles.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>
+        <p>Rôles</p>
     </a>
 </li>
 @endcan
-@can('index-RoleController')
+@can('index-ServiceController')
 <li class="nav-item">
-    <a href="{{ route('roles.index') }}"
-        class="nav-link {{ Route::is('roles.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
-        <p>Rôles</p>
+    <a href="{{ route('services.index') }}" class="nav-link {{ Route::is('services.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>
+        <p>Prestations</p>
     </a>
 </li>
 @endcan
@@ -50,17 +54,8 @@
 <li class="nav-item">
     <a href="{{ route('niveauScolaires.index') }}"
         class="nav-link {{ Route::is('niveauScolaires.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
+        <i class="fa-solid fa-gears"></i>
         <p>Niveau Scolaires</p>
-    </a>
-</li>
-@endcan
-@can('index-EmployeController')
-<li class="nav-item">
-    <a href="{{ route('employes.index') }}"
-        class="nav-link {{ Route::is('employes.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
-        <p>Employés</p>
     </a>
 </li>
 @endcan
@@ -68,7 +63,7 @@
 <li class="nav-item">
     <a href="{{ route('couvertureMedicals.index') }}"
         class="nav-link {{ Route::is('couvertureMedicals.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
+        <i class="fa-solid fa-gears"></i>
         <p>Couverture Médicale</p>
     </a>
 </li>
@@ -77,57 +72,69 @@
 <li class="nav-item">
     <a href="{{ route('typeHandicaps.index') }}"
         class="nav-link {{ Route::is('typeHandicaps.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
+        <i class="fa-solid fa-gears"></i>
         <p>Type d'handicaps</p>
     </a>
 </li>
 @endcan
-@can('index-ServiceController')
+
+@can('index-EtatCivilController')
 <li class="nav-item">
-    <a href="{{ route('services.index') }}"
-        class="nav-link {{ Route::is('services.index' . '*') ? 'active' : '' }}">
-        <i class="fa-solid fa-gears"></i>        
-        <p>Prestations</p>
+    <a href="{{ route('etatCivils.index') }}"
+        class="nav-link {{ Route::is('etatCivils.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>
+        <p>Etat Civil</p>
     </a>
 </li>
 @endcan
-
-{{-- 
-@foreach (app_menu() as $group => $items)
-    @if (strlen($group) < 1)
-
-        @foreach ($items as $item)
-            <li class="nav-item">
-                <a href="{{ Route::has($item->url) ? route($item->url) : $item->url }}"
-class="nav-link {{ Route::is($item->url . '*') ? 'active' : '' }}">
-{!! $item->icon !!}
-<p> {{ $item->nom }} </p>
-</a>
-</li>
-@endforeach
-@else
-@php
-$isActive = $items->filter(fn($item, $key) => Route::is($item->url . '*'))->isNotEmpty();
-@endphp
-<li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
-    <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
-        {!! $items->first()->menu_group?->icon !!}
-        <p class="pl-2">
-            {{ $group }}
-            <i class="right fas fa-angle-left"></i>
-        </p>
+@can('index-EmployeController')
+<li class="nav-item">
+    <a href="{{ route('employes.index') }}" class="nav-link {{ Route::is('employes.index' . '*') ? 'active' : '' }}">
+        <i class="fa-solid fa-gears"></i>
+        <p>Employés</p>
     </a>
-    <ul class="nav nav-treeview" style="">
-        @foreach ($items as $item)
-        <li class="nav-item">
-            <a href="{{ Route::has($item->url) ? route($item->url) : $item->url }}"
-                class="nav-link {{ Route::is($item->url . '*') ? 'active' : '' }}">
-                <p> {{ $item->nom }} </p>
-            </a>
-        </li>
-        @endforeach
+</li>
+@endcan
     </ul>
 </li>
-@endif
-@endforeach
---}}
+
+
+
+
+
+{{--
+@foreach (app_menu() as $group => $items)
+@if (strlen($group) < 1) @foreach ($items as $item) <li class="nav-item">
+    <a href="{{ Route::has($item->url) ? route($item->url) : $item->url }}"
+        class="nav-link {{ Route::is($item->url . '*') ? 'active' : '' }}">
+        {!! $item->icon !!}
+        <p> {{ $item->nom }} </p>
+    </a>
+    </li>
+    @endforeach
+    @else
+    @php
+    $isActive = $items->filter(fn($item, $key) => Route::is($item->url . '*'))->isNotEmpty();
+    @endphp
+    <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+        <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+            {!! $items->first()->menu_group?->icon !!}
+            <p class="pl-2">
+                {{ $group }}
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview" style="">
+            @foreach ($items as $item)
+            <li class="nav-item">
+                <a href="{{ Route::has($item->url) ? route($item->url) : $item->url }}"
+                    class="nav-link {{ Route::is($item->url . '*') ? 'active' : '' }}">
+                    <p> {{ $item->nom }} </p>
+                </a>
+            </li>
+            @endforeach
+        </ul>
+    </li>
+    @endif
+    @endforeach
+    --}}
