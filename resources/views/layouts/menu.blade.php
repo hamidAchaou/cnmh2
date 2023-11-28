@@ -1,4 +1,4 @@
-@can('index-DossierPatientsController')
+@can('index-DossierPatientController')
 <li class="nav-item">
     <a href="{{ route('dossier-patients.index') }}"
         class="nav-link {{ Route::is('dossier-patients.index' . '*') ? 'active' : '' }}">

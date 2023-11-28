@@ -273,18 +273,35 @@ class PermissionSeeder extends Seeder
             'name' => 'export-UserController',
         ]);
 
-       
+        // Adding dossier patient permissions 
 
-        
+        Permission::create([
+            'name' => 'index-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'create-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'show-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'edit-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'update-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'store-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'destroy-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'export-DossierPatientController',
+        ]);
+        Permission::create([
+            'name' => 'import-DossierPatientController',
+        ]);
 
-       
-
-
-        
-
-
-
-
-        
     }
 }

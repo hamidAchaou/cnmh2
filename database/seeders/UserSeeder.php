@@ -106,6 +106,15 @@ class UserSeeder extends Seeder
             'destroy-UserController',
             'import-UserController',
             'export-UserController',
+            'index-DossierPatientController',
+            'create-DossierPatientController',
+            'show-DossierPatientController',
+            'edit-DossierPatientController',
+            'update-DossierPatientController',
+            'store-DossierPatientController',
+            'destroy-DossierPatientController',
+            'export-DossierPatientController',
+            'import-DossierPatientController',
 
         ];
 
