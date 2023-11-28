@@ -45,12 +45,16 @@
             @include('adminlte-templates::common.paginate', ['records' => $permissions])
         </div>
         <div class="float-left">
+        @can('export-PermissionController')
             <a href="{{ route('permissions.export') }}" class="btn btn-default swalDefaultQuestion">
                 <i class="fas fa-download"></i> Exporter
             </a>
+            @endcan
+            @can('import-PermissionController')
             <button  class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModelPermission">
                 <i class="fas fa-file-import"></i> Importer
             </button>
+            @endcan
         </div>
     </div>
 </div>

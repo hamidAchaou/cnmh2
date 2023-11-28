@@ -59,6 +59,12 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'destroy-PermissionController',
         ]);
+        Permission::create([
+            'name' => 'export-PermissionController',
+        ]);
+        Permission::create([
+            'name' => 'import-PermissionController',
+        ]);
 
         // Admin adding Role permission
 

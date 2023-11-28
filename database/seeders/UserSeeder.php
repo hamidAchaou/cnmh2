@@ -44,6 +44,8 @@ class UserSeeder extends Seeder
             'edit-PermissionController',
             'update-PermissionController',
             'destroy-PermissionController',
+            'export-PermissionController',
+            'import-PermissionController',
             'index-RoleController',
             'store-RoleController',
             'create-RoleController',
