@@ -11,13 +11,13 @@
                 <div class="">
                     
                     <div class="">
-                    @can('create-PermissionController')
+                    @can('create-Permission')
                         <a class="btn btn-primary"
                         href="{{ route('permissions.create') }}">
                             @lang('crud.add_new')
                         </a>
                         @endcan
-                    @can('create-PermissionController')
+                    @can('create-Permission')
                         <a class="btn btn-primary ml-2"
                         href="{{ route('auto-create-permissions') }}">
                             @lang('crud.add_new') automatique

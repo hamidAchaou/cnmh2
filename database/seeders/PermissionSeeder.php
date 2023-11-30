@@ -15,292 +15,292 @@ class PermissionSeeder extends Seeder
         // Admin EtaCivil Permission 
 
         Permission::create([
-            'name' => 'index-EtatCivilController',
+            'name' => 'index-EtatCivil',
         ]);
         Permission::create([
-            'name' => 'create-EtatCivilController',
+            'name' => 'create-EtatCivil',
         ]);
         Permission::create([
-            'name' => 'edit-EtatCivilController',
+            'name' => 'edit-EtatCivil',
         ]);
         Permission::create([
-            'name' => 'show-EtatCivilController',
+            'name' => 'show-EtatCivil',
         ]);
         Permission::create([
-            'name' => 'update-EtatCivilController',
+            'name' => 'update-EtatCivil',
         ]);
         Permission::create([
-            'name' => 'destroy-EtatCivilController',
+            'name' => 'destroy-EtatCivil',
         ]);
         Permission::create([
-            'name' => 'export-EtatCivilController',
+            'name' => 'export-EtatCivil',
         ]);
         Permission::create([
-            'name' => 'import-EtatCivilController',
+            'name' => 'import-EtatCivil',
         ]);
 
         // Admin adding Permissions permission
 
         Permission::create([
-            'name' => 'index-PermissionController',
+            'name' => 'index-Permission',
         ]);
         Permission::create([
-            'name' => 'create-PermissionController',
+            'name' => 'create-Permission',
         ]);
         Permission::create([
-            'name' => 'show-PermissionController',
+            'name' => 'show-Permission',
         ]);
         Permission::create([
-            'name' => 'edit-PermissionController',
+            'name' => 'edit-Permission',
         ]);
         Permission::create([
-            'name' => 'update-PermissionController',
+            'name' => 'update-Permission',
         ]);
         Permission::create([
-            'name' => 'destroy-PermissionController',
+            'name' => 'destroy-Permission',
         ]);
         Permission::create([
-            'name' => 'export-PermissionController',
+            'name' => 'export-Permission',
         ]);
         Permission::create([
-            'name' => 'import-PermissionController',
+            'name' => 'import-Permission',
         ]);
 
         // Admin adding Role permission
 
         Permission::create([
-            'name' => 'index-RoleController',
+            'name' => 'index-Role',
         ]);
         Permission::create([
-            'name' => 'create-RoleController',
+            'name' => 'create-Role',
         ]);
         Permission::create([
-            'name' => 'store-RoleController',
+            'name' => 'store-Role',
         ]);
         Permission::create([
-            'name' => 'show-RoleController',
+            'name' => 'show-Role',
         ]);
         Permission::create([
-            'name' => 'edit-RoleController',
+            'name' => 'edit-Role',
         ]);
         Permission::create([
-            'name' => 'update-RoleController',
+            'name' => 'update-Role',
         ]);
         Permission::create([
-            'name' => 'destroy-RoleController',
+            'name' => 'destroy-Role',
         ]);
         Permission::create([
-            'name' => 'export-RoleController',
+            'name' => 'export-Role',
         ]);
         Permission::create([
-            'name' => 'import-RoleController',
+            'name' => 'import-Role',
         ]);
 
         // Admin , Adding Niveau Scolaire permission
         
         Permission::create([
-            'name' => 'index-NiveauScolaireController'
+            'name' => 'index-NiveauScolaire'
         ]);
         Permission::create([
-            'name' => 'show-NiveauScolaireController'
+            'name' => 'show-NiveauScolaire'
         ]);
         Permission::create([
-            'name' => 'create-NiveauScolaireController'
+            'name' => 'create-NiveauScolaire'
         ]);
         Permission::create([
-            'name' => 'edit-NiveauScolaireController'
+            'name' => 'edit-NiveauScolaire'
         ]);
         Permission::create([
-            'name' => 'update-NiveauScolaireController'
+            'name' => 'update-NiveauScolaire'
         ]);
         Permission::create([
-            'name' => 'destroy-NiveauScolaireController'
+            'name' => 'destroy-NiveauScolaire'
         ]);
         Permission::create([
-            'name' => 'export-NiveauScolaireController'
+            'name' => 'export-NiveauScolaire'
         ]);
         Permission::create([
-            'name' => 'import-NiveauScolaireController'
+            'name' => 'import-NiveauScolaire'
         ]);
 
         // Adding employes crud permission
 
         Permission::create([
-            'name' => 'index-EmployeController',
+            'name' => 'index-Employe',
         ]);
         Permission::create([
-            'name' => 'create-EmployeController',
+            'name' => 'create-Employe',
         ]);
         Permission::create([
-            'name' => 'show-EmployeController',
+            'name' => 'show-Employe',
         ]);
         Permission::create([
-            'name' => 'edit-EmployeController',
+            'name' => 'edit-Employe',
         ]);
         Permission::create([
-            'name' => 'update-EmployeController',
+            'name' => 'update-Employe',
         ]);
         Permission::create([
-            'name' => 'destroy-EmployeController',
+            'name' => 'destroy-Employe',
         ]);
         Permission::create([
-            'name' => 'export-EmployeController',
+            'name' => 'export-Employe',
         ]);
         Permission::create([
-            'name' => 'import-EmployeController',
+            'name' => 'import-Employe',
         ]);
 
          // Adding Couverture Médicale crud permission
 
          Permission::create([
-            'name' => 'index-CouvertureMedicalController',
+            'name' => 'index-CouvertureMedical',
         ]);
         Permission::create([
-            'name' => 'create-CouvertureMedicalController',
+            'name' => 'create-CouvertureMedical',
         ]);
         Permission::create([
-            'name' => 'show-CouvertureMedicalController',
+            'name' => 'show-CouvertureMedical',
         ]);
         Permission::create([
-            'name' => 'edit-CouvertureMedicalController',
+            'name' => 'edit-CouvertureMedical',
         ]);
         Permission::create([
-            'name' => 'update-CouvertureMedicalController',
+            'name' => 'update-CouvertureMedical',
         ]);
         Permission::create([
-            'name' => 'destroy-CouvertureMedicalController',
+            'name' => 'destroy-CouvertureMedical',
         ]);
         Permission::create([
-            'name' => 'export-CouvertureMedicalController',
+            'name' => 'export-CouvertureMedical',
         ]);
         Permission::create([
-            'name' => 'import-CouvertureMedicalController',
+            'name' => 'import-CouvertureMedical',
         ]);
 
          // Adding Type Handicap crud permission
 
          Permission::create([
-            'name' => 'index-TypeHandicapController',
+            'name' => 'index-TypeHandicap',
         ]);
         Permission::create([
-            'name' => 'create-TypeHandicapController',
+            'name' => 'create-TypeHandicap',
         ]);
         Permission::create([
-            'name' => 'show-TypeHandicapController',
+            'name' => 'show-TypeHandicap',
         ]);
         Permission::create([
-            'name' => 'edit-TypeHandicapController',
+            'name' => 'edit-TypeHandicap',
         ]);
         Permission::create([
-            'name' => 'update-TypeHandicapController',
+            'name' => 'update-TypeHandicap',
         ]);
         Permission::create([
-            'name' => 'destroy-TypeHandicapController',
+            'name' => 'destroy-TypeHandicap',
         ]);
         Permission::create([
-            'name' => 'export-TypeHandicapController',
+            'name' => 'export-TypeHandicap',
         ]);
         Permission::create([
-            'name' => 'import-TypeHandicapController',
+            'name' => 'import-TypeHandicap',
         ]);
 
            // Adding Services (prestations) crud permission
 
            Permission::create([
-            'name' => 'index-ServiceController',
+            'name' => 'index-Service',
         ]);
         Permission::create([
-            'name' => 'create-ServiceController',
+            'name' => 'create-Service',
         ]);
         Permission::create([
-            'name' => 'show-ServiceController',
+            'name' => 'show-Service',
         ]);
         Permission::create([
-            'name' => 'edit-ServiceController',
+            'name' => 'edit-Service',
         ]);
         Permission::create([
-            'name' => 'update-ServiceController',
+            'name' => 'update-Service',
         ]);
         Permission::create([
-            'name' => 'destroy-ServiceController',
+            'name' => 'destroy-Service',
         ]);
         Permission::create([
-            'name' => 'export-ServiceController',
+            'name' => 'export-Service',
         ]);
         Permission::create([
-            'name' => 'import-ServiceController',
+            'name' => 'import-Service',
         ]);
 
         // Adding Auto permissions button action permissions
 
         Permission::create([
-            'name' => 'addPermissionsAuto-PermissionController',
+            'name' => 'addPermissionsAuto-Permission',
         ]);
         Permission::create([
-            'name' => 'showRolePermission-PermissionController',
+            'name' => 'showRolePermission-Permission',
         ]);
         Permission::create([
-            'name' => 'assignRolePermission-PermissionController',
+            'name' => 'assignRolePermission-Permission',
         ]);
 
         // Adding User crud permissions
 
         Permission::create([
-            'name' => 'index-UserController',
+            'name' => 'index-User',
         ]);
         Permission::create([
-            'name' => 'create-UserController',
+            'name' => 'create-User',
         ]);
         Permission::create([
-            'name' => 'show-UserController',
+            'name' => 'show-User',
         ]);
         Permission::create([
-            'name' => 'edit-UserController',
+            'name' => 'edit-User',
         ]);
         Permission::create([
-            'name' => 'update-UserController',
+            'name' => 'update-User',
         ]);
         Permission::create([
-            'name' => 'store-UserController',
+            'name' => 'store-User',
         ]);
         Permission::create([
-            'name' => 'destroy-UserController',
+            'name' => 'destroy-User',
         ]);
         Permission::create([
-            'name' => 'import-UserController',
+            'name' => 'import-User',
         ]);
         Permission::create([
-            'name' => 'export-UserController',
+            'name' => 'export-User',
         ]);
 
         // Adding dossier patient permissions 
 
         Permission::create([
-            'name' => 'index-DossierPatientController',
+            'name' => 'index-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'create-DossierPatientController',
+            'name' => 'create-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'show-DossierPatientController',
+            'name' => 'show-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'edit-DossierPatientController',
+            'name' => 'edit-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'update-DossierPatientController',
+            'name' => 'update-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'store-DossierPatientController',
+            'name' => 'store-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'destroy-DossierPatientController',
+            'name' => 'destroy-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'export-DossierPatientController',
+            'name' => 'export-DossierPatient',
         ]);
         Permission::create([
-            'name' => 'import-DossierPatientController',
+            'name' => 'import-DossierPatient',
         ]);
 
     }

@@ -9,7 +9,7 @@
                     <h1>@lang('models/dossierPatients.plural')</h1>
                 </div>
                 <div class="col-sm-6">
-                    @can('create-DossierPatientController')
+                    @can('create-DossierPatient')
                     <a class="btn btn-primary float-right"
                        href="{{ route('dossier-patients.parent') }}">
                          @lang('crud.add_new')

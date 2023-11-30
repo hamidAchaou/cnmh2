@@ -22,7 +22,7 @@
                                 <i class="far fa-eye"></i>
                             </a> 
                             --}}
-                            @can('update-UserController')
+                            @can('update-User')
 
                             <a href="{{ route('manage.role.permission', [$user->id]) }}" class='btn btn-default btn-sm d-flex'>
                                 <i class="far fa-edit mr-2 mt-1"></i>
@@ -34,7 +34,7 @@
                                 <i class="far fa-edit"></i>
                             </a>
                             --}}
-                            @can('destroy-UserController')
+                            @can('destroy-User')
 
                             {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                             @endcan

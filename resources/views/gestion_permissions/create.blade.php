@@ -1,4 +1,4 @@
-@can('create-PermissionController')
+@can('create-Permission')
 @extends('layouts.app')
 
 @section('content')

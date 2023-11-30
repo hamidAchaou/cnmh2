@@ -1,4 +1,4 @@
-@can('index-DossierPatientController')
+@can('index-DossierPatient')
 <li class="nav-item">
     <a href="{{ route('dossier-patients.index') }}"
         class="nav-link {{ Route::is('dossier-patients.index' . '*') ? 'active' : '' }}">
@@ -6,6 +6,9 @@
         <p>Dossier beneficiers</p>
     </a>
 </li>
+
+@endcan
+@can('index-Permission')
 <li class="nav-item ">
     <a href="#" class="nav-link ">
         <i class="fa-solid fa-gears"></i>
@@ -16,7 +19,7 @@
     <ul class="nav nav-treeview" style="">
 
 
-    @can('index-UserController')
+    @can('index-User')
 <li class="nav-item">
     <a href="{{ route('users.index') }}" class="nav-link {{ Route::is('users.index' . '*') ? 'active' : '' }}">
         <p>Attribuer Roles</p>
@@ -24,7 +27,7 @@
 </li>
 @endcan
 
-@can('index-PermissionController')
+@can('index-Permission')
 <li class="nav-item">
     <a href="{{ route('permissions.index') }}"
         class="nav-link {{ Route::is('permissions.index' . '*') ? 'active' : '' }}">
@@ -33,7 +36,7 @@
 </li>
 @endcan
 
-@can('index-RoleController')
+@can('index-Role')
 <li class="nav-item">
     <a href="{{ route('roles.index') }}" class="nav-link {{ Route::is('roles.index' . '*') ? 'active' : '' }}">
         <p>Rôles</p>
@@ -44,6 +47,7 @@
     </ul>
 </li>
 @endcan
+@can('index-TypeHandicap')
 <li class="nav-item ">
     <a href="#" class="nav-link ">
         <i class="fa-solid fa-gears"></i>
@@ -53,14 +57,15 @@
     </a>
     <ul class="nav nav-treeview" style="">
 
-@can('index-ServiceController')
+
+@can('index-Service')
 <li class="nav-item">
     <a href="{{ route('services.index') }}" class="nav-link {{ Route::is('services.index' . '*') ? 'active' : '' }}">
         <p>Prestations</p>
     </a>
 </li>
 @endcan
-@can('index-NiveauScolaireController')
+@can('index-NiveauScolaire')
 <li class="nav-item">
     <a href="{{ route('niveauScolaires.index') }}"
         class="nav-link {{ Route::is('niveauScolaires.index' . '*') ? 'active' : '' }}">
@@ -68,7 +73,7 @@
     </a>
 </li>
 @endcan
-@can('index-CouvertureMedicalController')
+@can('index-CouvertureMedical')
 <li class="nav-item">
     <a href="{{ route('couvertureMedicals.index') }}"
         class="nav-link {{ Route::is('couvertureMedicals.index' . '*') ? 'active' : '' }}">
@@ -76,7 +81,7 @@
     </a>
 </li>
 @endcan
-@can('index-TypeHandicapController')
+@can('index-TypeHandicap')
 <li class="nav-item">
     <a href="{{ route('typeHandicaps.index') }}"
         class="nav-link {{ Route::is('typeHandicaps.index' . '*') ? 'active' : '' }}">
@@ -85,7 +90,7 @@
 </li>
 @endcan
 
-@can('index-EtatCivilController')
+@can('index-EtatCivil')
 <li class="nav-item">
     <a href="{{ route('etatCivils.index') }}"
         class="nav-link {{ Route::is('etatCivils.index' . '*') ? 'active' : '' }}">
@@ -93,7 +98,7 @@
     </a>
 </li>
 @endcan
-@can('index-EmployeController')
+@can('index-Employe')
 <li class="nav-item">
     <a href="{{ route('employes.index') }}" class="nav-link {{ Route::is('employes.index' . '*') ? 'active' : '' }}">
         <p>Employés</p>
@@ -102,6 +107,7 @@
 @endcan
     </ul>
 </li>
+@endcan
 
 
 {{--
