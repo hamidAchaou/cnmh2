@@ -60,7 +60,6 @@ class TypeHandicapController extends AppBaseController
 
     public function create()
     {
-
         return view('type_handicaps.create');
     }
 
